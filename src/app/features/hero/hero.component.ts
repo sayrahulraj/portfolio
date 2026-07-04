@@ -4,6 +4,7 @@ import { ScrollService } from '../../core/services/scroll.service';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { TypewriterDirective } from '../../shared/directives/typrewriter.directive';
 import { ResumeButtonComponent } from '../../shared/components/resume-button/resume-button.component';
+import { TechGlobeComponent } from '../tech-globe/tech-globe.component';
 
 @Component({
   selector: 'app-hero',
@@ -12,7 +13,8 @@ import { ResumeButtonComponent } from '../../shared/components/resume-button/res
   imports: [
     IconComponent,
     TypewriterDirective,
-    ResumeButtonComponent
+    ResumeButtonComponent,
+    TechGlobeComponent
   ],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
