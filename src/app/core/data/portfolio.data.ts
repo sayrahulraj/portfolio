@@ -10,7 +10,7 @@ export const PROFILE = {
     email: 'sayrahulraj@gmail.com',
     phone: '+91 85410 77579',
     photo: 'assets/images/profile.jpg',
-    resumePath: 'assets/files/resume.pdf',
+    resumePath: 'assets/resume/Rahul_Raj_Resume.pdf',
     resumeFileName: 'Rahul_Raj_Resume.pdf',
     summary: 'Java Full Stack Developer with 5+ years of experience building secure, scalable, and high-performance enterprise applications using Java, Spring Boot, Microservices, Angular, REST APIs, Kafka, and SQL. Passionate about clean architecture, modern DevOps practices, and AI-assisted software development to deliver innovative solutions for global clients.', roles: ['Android Apps', 'Web Applications'] as const,
 } as const;
