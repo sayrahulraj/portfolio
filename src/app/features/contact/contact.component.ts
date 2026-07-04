@@ -5,6 +5,7 @@ import { IconComponent } from '../../shared/components/icon/icon.component';
 import { SectionHeadingComponent } from '../../shared/components/section-heading/section-heading.component';
 import { RippleDirective } from '../../shared/directives/ripple.directive';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contact',
@@ -23,11 +24,15 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
 export class ContactComponent {
   private readonly fb = inject(FormBuilder);
 
+  private readonly sanitizer = inject(DomSanitizer);
+
   protected readonly profile = PROFILE;
   protected readonly socials = SOCIALS;
 
   protected readonly submitted = signal(false);
   protected readonly success = signal(false);
+
+  protected readonly mapUrl: SafeResourceUrl = this.sanitizer.bypassSecurityTrustResourceUrl('https://maps.app.goo.gl/gDBdbJXVeEaT5Jnm6');
 
   protected readonly form = this.fb.nonNullable.group({
     name: ['', [Validators.required, Validators.minLength(2)]],

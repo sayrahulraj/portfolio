@@ -50,13 +50,8 @@
 
         </div>
 
-        <div class="contact__map glass" role="img" aria-label="Map location placeholder">
-          <div class="contact__map-pin">
-            <app-icon name="location" [size]="26" />
-          </div>
-          <span class="contact__map-text">
-            Google Maps embed placeholder
-          </span>
+        <div class="contact__map glass" role="region" aria-label="Map showing location">
+          <iframe class="contact__map-frame" [src]="mapUrl" width="100%" height="100%" style="border: 0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Location map"></iframe>
         </div>
       </aside>
 
