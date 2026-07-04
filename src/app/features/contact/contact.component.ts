@@ -32,7 +32,7 @@ export class ContactComponent {
   protected readonly submitted = signal(false);
   protected readonly success = signal(false);
 
-  protected readonly mapUrl: SafeResourceUrl = this.sanitizer.bypassSecurityTrustResourceUrl('https://maps.app.goo.gl/gDBdbJXVeEaT5Jnm6');
+  protected readonly mapUrl: SafeResourceUrl = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.google.com/maps.app.goo.gl/gDBdbJXVeEaT5Jnm6');
 
   protected readonly form = this.fb.nonNullable.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
