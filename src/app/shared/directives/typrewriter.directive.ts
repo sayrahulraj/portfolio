@@ -1,11 +1,11 @@
-import { Directive, ElementRef, inject, Input, NgZone } from "@angular/core";
+import { AfterViewInit, Directive, ElementRef, inject, Input, NgZone, OnDestroy } from "@angular/core";
 
 @Directive({
     selector: '[appTypewriter]',
     standalone: true,
 })
 
-export class TypewriterDirective {
+export class TypewriterDirective implements AfterViewInit, OnDestroy{
     // Directive logic goes here
     private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
     private readonly zone = inject(NgZone);

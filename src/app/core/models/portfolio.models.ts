@@ -8,7 +8,6 @@ export interface NavItem {
 export interface SocialLink {
   readonly label: string;
   readonly url: string;
-  /** key used to pick an inline SVG icon */
   readonly icon: 'github' | 'linkedin' | 'email';
 }
 

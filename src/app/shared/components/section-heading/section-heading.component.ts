@@ -19,7 +19,7 @@ import { RevealDirective } from '../../directives/reveal.directive';
   .heading {
     text-align: center;
     max-width: 640px;
-    margin: 0 auto clamp(2rem, 5vw, 305rem);
+    margin: 0 auto clamp(2rem, 5vw, 3.5rem);
     }
     .heading__sub {
       color: var(--text-muted);

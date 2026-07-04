@@ -1,74 +1,62 @@
 <section id="about" class="section" aria-labelledby="about-title">
   <div class="container">
-    <app-section-heading
-      eyebrow="About Me"
-      title="Passion for"
-      accent="software engineering"
-      titleId="about-title"
-      subtitle="A quick look at who I am and the journey that shaped my craft."
-    />
+    <app-section-heading eyebrow="About Me" title="Passion for" accent="software engineering" titleId="about-title"
+      subtitle="A quick look at who I am and the journey that shaped my craft." />
 
     <div class="about__grid">
       <div class="about__intro reveal" appReveal>
         <p>
-          I'm {{ profile.fullName }}, a {{ profile.title }} who loves turning
-          complex problems into clean, dependable software. My focus spans
-          robust Spring Boot backends and elegant Angular front-ends, always
-          with an eye on architecture, performance and maintainability.
+          I'm <strong>{{ profile.fullName }}</strong>, a passionate
+          <strong>Java Full Stack Developer</strong> with 5+ years of experience
+          designing and developing scalable enterprise applications. I specialize in
+          Java, Spring Boot, Microservices, Angular, and RESTful APIs, building secure,
+          high-performance solutions that solve real-world business challenges.
         </p>
 
         <p>
-          I believe great engineering is equal parts empathy and precision —
-          writing code that teammates enjoy reading, and building products that
-          users trust. I'm continuously learning, recently leaning into
-          AI-assisted development to ship higher quality, faster.
+          Throughout my journey at Tata Consultancy Services and Infosys, I've worked
+          on healthcare, insurance, and financial domain applications for global
+          clients including Cardinal Health, State Farm, and Fiserv. I enjoy writing
+          clean, maintainable code, collaborating with cross-functional teams, and
+          continuously learning new technologies. I'm also passionate about leveraging
+          AI-powered development tools to deliver innovative software faster and with
+          higher quality.
         </p>
 
         <ul class="about__stats">
           @for (item of highlights; track item.label; let i = $index) {
-            <li
-              class="about__stat glass reveal"
-              appReveal
-              [revealDelay]="i * 90"
-            >
-              <span class="about__stat-value text-gradient">
-                {{ item.value }}
-              </span>
+          <li class="about__stat glass reveal" appReveal [revealDelay]="i * 90">
+            <span class="about__stat-value text-gradient">
+              {{ item.value }}
+            </span>
 
-              <span class="about__stat-label">
-                {{ item.label }}
-              </span>
-            </li>
+            <span class="about__stat-label">
+              {{ item.label }}
+            </span>
+          </li>
           }
         </ul>
       </div>
 
-      <ol
-        class="about__timeline reveal"
-        appReveal
-        [revealDelay]="120"
-      >
+      <ol class="about__timeline reveal" appReveal [revealDelay]="120">
         @for (entry of timeline; track entry.year) {
-          <li class="about__timeline-item">
-            <span
-              class="about__timeline-dot"
-              aria-hidden="true"
-            ></span>
+        <li class="about__timeline-item">
+          <span class="about__timeline-dot" aria-hidden="true"></span>
 
-            <span class="about__timeline-year">
-              {{ entry.year }}
-            </span>
+          <span class="about__timeline-year">
+            {{ entry.year }}
+          </span>
 
-            <h3 class="about__timeline-title">
-              {{ entry.title }}
-            </h3>
+          <h3 class="about__timeline-title">
+            {{ entry.title }}
+          </h3>
 
-            <p class="about__timeline-detail">
-              {{ entry.detail }}
-            </p>
-          </li>
+          <p class="about__timeline-detail">
+            {{ entry.detail }}
+          </p>
+        </li>
         }
       </ol>
     </div>
   </div>
-</section>
+</section>>

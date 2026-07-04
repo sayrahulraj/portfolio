@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Inject, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, Input } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 export type IconName = 
@@ -26,7 +26,14 @@ export type IconName =
 | 'send' 
 | 'check' 
 | 'briefcase' 
-| 'award';
+| 'award'
+| 'lock'
+| 'brain'
+| 'bot'
+| 'book'
+| 'tool'
+| 'git-branch'
+| 'server';
 
 @Component({
   selector: 'app-icon',
@@ -49,7 +56,7 @@ export type IconName =
   `,
 })
 export class IconComponent {
-  private readonly sanitizer = Inject(DomSanitizer);
+  private readonly sanitizer = inject(DomSanitizer);
   @Input({ required: true }) set name(value: IconName) {
     this.safePath = this.sanitizer.bypassSecurityTrustHtml(ICONS[value] ?? '');
   }
@@ -91,4 +98,13 @@ const ICONS: Record<IconName, string> = {
   check: '<polyline points="20 6 9 17 4 12"/>briefcase:<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>',
   briefcase: '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>',
   award: '<circle cx="12" cy="8" r="7"/><path d="M15.5 12.5 17 22l-5-3-5 3 1.5-9.5"/>',
+  lock: '<rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path>',
+  brain: '<path d="M9 3a3 3 0 0 0-3 3v1a3 3 0 0 0-2 3 3 3 0 0 0 2 3v1a3 3 0 0 0 3 3h1v2"></path><path d="M15 3a3 3 0 0 1 3 3v1a3 3 0 0 1 2 3 3 3 0 0 1-2 3v1a3 3 0 0 1-3 3h-1v2"></path><path d="M9 12h6"></path><path d="M12 7v10"></path>',
+  bot: '<rect x="5" y="8" width="14" height="11" rx="2"></rect><circle cx="9" cy="13" r="1"></circle><circle cx="15" cy="13" r="1"></circle><path d="M12 8V4"></path><circle cx="12" cy="3" r="1"></circle><path d="M9 17h6"></path>',
+  book:
+'<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>',
+tool:
+'<path d="M14.7 6.3a4 4 0 1 0 3 3l-6.4 6.4a2 2 0 1 1-2.8-2.8l6.4-6.4a4 4 0 0 0-.2-.2z"></path>',
+'git-branch':
+'<line x1="6" y1="3" x2="6" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path><circle cx="6" cy="3" r="3"></circle>',
 };

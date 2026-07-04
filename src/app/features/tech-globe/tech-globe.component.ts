@@ -17,19 +17,32 @@ interface Node {
 }
 
 const TECH = [
-  'Java', 'Spring', 'Angular', 'TypeScript', 'AWS', 'Docker',
-  'SQL', 'REST', 'Redis', 'Microservices', 'JPA', 'Git',
+  'Java',
+  'Spring Boot',
+  'Microservices',
+  'Angular',
+  'JavaScript',
+  'REST APIs',
+  'Apache Kafka',
+  'MS SQL Server',
+  'JPA/Hibernate',
+  'Redis',
+  'OAuth2',
+  'JWT',
+  'AWS',
+  'GitLab',
+  'Maven',
+  'Gradle',
+  'JUnit',
+  'Mockito',
+  'SonarQube',
+  'Fortify',
+  'CI/CD',
+  'GitHub Copilot',
+  'Claude AI',
+  'Devin AI',
 ];
 
-/**
- * Interconnected "technology globe": points distributed on a sphere via the
- * Fibonacci lattice, projected to 2D each frame, rotated continuously and
- * tilted by the pointer. Connecting lines glow between nearby nodes.
- *
- * Performance: single canvas, one rAF loop OUTSIDE Angular, DPR-aware, paused
- * when offscreen or when the user prefers reduced motion. Fully cleaned up on
- * destroy - no leaked listeners or animation frames.
- */
 @Component({
   selector: 'app-tech-globe',
   standalone: true,

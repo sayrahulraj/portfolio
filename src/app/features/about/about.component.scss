@@ -44,6 +44,8 @@
 .about__timeline {
   position: relative;
   padding-left: 1.75rem;
+  list-style: none;
+  margin: 0; 
 }
 
 .about__timeline::before {
@@ -54,7 +56,8 @@
   bottom: 6px;
   width: 2px;
   background: linear-gradient(var(--brand-2), var(--brand-3));
-  opacity: 0.5;
+  opacity: 1;
+  font-size: 1.25rem;
 }
 
 .about__timeline-item {
