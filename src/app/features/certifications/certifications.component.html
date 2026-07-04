@@ -1,0 +1,55 @@
+<section id="certifications" class="section" aria-labelledby="certifications-title">
+  <div class="container">
+    <app-section-heading
+      eyebrow="Certifications"
+      title="Credentials &"
+      accent="achievements"
+      titleId="certifications-title"
+      subtitle="Industry certifications that back my expertise."
+    />
+
+    <div class="certs__grid">
+      @for (cert of certifications; track cert.name; let i = $index) {
+        <article
+          class="certs__card gradient-border reveal"
+          appReveal
+          [revealDelay]="(i % 4) * 90"
+        >
+          <div class="certs__media">
+            <img
+              [src]="cert.image"
+              [alt]="cert.name + ' certificate'"
+              loading="lazy"
+              decoding="async"
+              width="360"
+              height="220"
+            />
+          </div>
+
+          <div class="certs__body">
+            <span class="certs__icon">
+              <app-icon name="award" [size]="18" />
+            </span>
+
+            <h3 class="certs__name">{{ cert.name }}</h3>
+
+            <p class="certs__org">
+              {{ cert.organization }} · {{ cert.date }}
+            </p>
+
+            <a
+              class="btn btn--ghost certs__btn"
+              [href]="cert.url || '#'"
+              target="_blank"
+              rel="noopener noreferrer"
+              [attr.aria-label]="'View ' + cert.name + ' certificate'"
+            >
+              <app-icon class="btn__icon" name="external" [size]="16" />
+              View Certificate
+            </a>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

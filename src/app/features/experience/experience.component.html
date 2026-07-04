@@ -1,0 +1,75 @@
+<section id="experience" class="section" aria-labelledby="experience-title">
+  <div class="container">
+    <app-section-heading
+      eyebrow="Experience"
+      title="My professional"
+      accent="journey"
+      titleId="experience-title"
+      subtitle="Roles and projects where I've delivered real, measurable impact."
+    />
+
+    <div class="exp__timeline">
+      @for (exp of experiences; track exp.company; let i = $index) {
+        <article class="exp__entry reveal" appReveal [revealDelay]="i * 120">
+          <span class="exp__marker" aria-hidden="true">
+            <app-icon name="briefcase" [size]="18" />
+          </span>
+
+          <div class="exp__card glass">
+            <header class="exp__head">
+              <div>
+                <h3 class="exp__role">{{ exp.role }}</h3>
+                <p class="exp__company">{{ exp.company }}</p>
+              </div>
+
+              <div class="exp__meta">
+                <span class="chip">{{ exp.period }}</span>
+                <span class="exp__location">
+                  <app-icon name="location" [size]="14" />
+                  {{ exp.location }}
+                </span>
+              </div>
+            </header>
+
+            <p class="exp__summary">{{ exp.summary }}</p>
+
+            <div class="exp__projects">
+              @for (project of exp.projects; track project.name) {
+                <div class="exp__project">
+                  <h4 class="exp__project-name">{{ project.name }}</h4>
+                  <p class="exp__project-desc">{{ project.description }}</p>
+
+                  <div class="exp__cols">
+                    <div>
+                      <h5 class="exp__label">Responsibilities</h5>
+                      <ul class="exp__list">
+                        @for (item of project.responsibilities; track item) {
+                          <li>{{ item }}</li>
+                        }
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h5 class="exp__label">Achievements</h5>
+                      <ul class="exp__list exp__list--wins">
+                        @for (item of project.achievements; track item) {
+                          <li>{{ item }}</li>
+                        }
+                      </ul>
+                    </div>
+                  </div>
+
+                  <ul class="exp__stack">
+                    @for (tech of project.stack; track tech) {
+                      <li class="chip">{{ tech }}</li>
+                    }
+                  </ul>
+                </div>
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

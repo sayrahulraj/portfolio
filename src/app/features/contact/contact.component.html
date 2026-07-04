@@ -1,0 +1,120 @@
+<section id="contact" class="section" aria-labelledby="contact-title">
+  <div class="container">
+    <app-section-heading eyebrow="Contact" title="Let's build" accent="something great" titleId="contact-title"
+      subtitle="Have a role, a project or just a question? I'd love to hear from you." />
+
+    <div class="contact__grid">
+      <!-- Left: details + map -->
+      <aside class="contact__aside reveal" appReveal>
+        <div class="contact__details glass">
+          <h3 class="contact__subtitle">Contact details</h3>
+
+          <a class="contact__item" [href]="'mailto:' + profile.email">
+            <span class="contact__item-icon">
+              <app-icon name="email" [size]="18" />
+            </span>
+            <span>
+              <span class="contact__item-label">Email</span>
+              {{ profile.email }}
+            </span>
+          </a>
+
+          <a class="contact__item" [href]="'tel:' + profile.phone">
+            <span class="contact__item-icon">
+              <app-icon name="phone" [size]="18" />
+            </span>
+            <span>
+              <span class="contact__item-label">Phone</span>
+              {{ profile.phone }}
+            </span>
+          </a>
+
+          <span class="contact__item">
+            <span class="contact__item-icon">
+              <app-icon name="location" [size]="18" />
+            </span>
+            <span>
+              <span class="contact__item-label">Location</span>
+              {{ profile.location }}
+            </span>
+          </span>
+          <ul class="contact__socials">
+            @for (social of socials; track social.label) {
+              <li>
+                <a class="contact__social" [href]="social.url" [attr.aria-label] = "social.label" target="_blank" rel="noopener noreferrer">
+                  <app-icon [name]="social.icon" [size]="20" />
+                </a>
+              </li>
+            }
+          </ul>
+
+        </div>
+
+        <div class="contact__map glass" role="img" aria-label="Map location placeholder">
+          <div class="contact__map-pin">
+            <app-icon name="location" [size]="26" />
+          </div>
+          <span class="contact__map-text">
+            Google Maps embed placeholder
+          </span>
+        </div>
+      </aside>
+
+      <!-- Right: form -->
+      <form class="contact__form glass reveal" appReveal [revealDelay]="120" [formGroup]="form" (ngSubmit)="submit()"
+        navalidate>
+        @if (success()) {
+        <div class="contact__success" role="status">
+          <span class="contact__success-check"><app-icon name="check" [size]="30" /></span>
+          <p>Thanks! Your message has been sent. I'll get back to you soon.</p>
+        </div>
+        }
+
+        <div class="contact__row">
+          <div class="contact__field">
+            <label for="name">Name</label>
+            <input id="name" type="text" formControlName="name" autocomplete="name" [class.is-invalid]="invalid('name')"
+              [attr.aria-invalid]="invalid('name')" />
+
+            @if (invalid('name')) {
+            <small class="contact__error">Please enter your name.</small>
+            }
+          </div>
+
+          <div class="contact__field">
+            <label for="email">Email</label>
+            <input id="email" type="email" formControlName="email" autocomplete="email"
+              [class.is-invalid]="invalid('email')" [attr.aria-invalid]="invalid('email')" />
+
+            @if (invalid('email')) {
+            <small class="contact__error">Please enter a valid email.</small>
+            }
+          </div>
+        </div>
+        <div class="contact__field">
+          <label for="subject">Subject</label>
+          <input id="subject" type="text" formControlName="subject" [class.is-invalid]="invalid('subject')"
+            [attr.aria-invalid]="invalid( 'subject')" />
+
+          @if (invalid('subject')) {
+          <small class="contact__error">Please add a subject.</small>
+          }
+        </div>
+
+        <div class="contact__field">
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" formControlName="message" [class.is-invalid]="invalid('message')"
+            [attr.aria-invalid]="invalid('message')"></textarea>
+
+          @if (invalid('message')) {
+          <small class="contact__error">Message should be at least 10 characters.</small>
+          }
+        </div>
+
+        <button type="submit" class="btn btn--primary contact__submit" appRipple>
+          <app-icon class="btn__icon" name="send" [size]="18" />Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

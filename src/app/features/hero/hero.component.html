@@ -1,0 +1,92 @@
+<section id="home" class="hero" aria-labelledby="hero-title">
+  <app-tech-globe />
+  <div class="hero__grid-overlay" aria-hidden="true"></div>
+
+  <div class="container hero__inner">
+    <div class="hero__content">
+
+      <p class="eyebrow hero__hello">
+        <span class="hero__wave" aria-hidden="true">👋</span> Hi, I'm
+      </p>
+
+      <h1 id="hero-title" class="hero__name">
+        {{ profile.fullName }}
+      </h1>
+
+      <p class="hero__role">
+        <span class="hero__role-label">{{ profile.title }}</span>
+        <span class="hero__typed">
+          <span class="hero__prefix">I build with</span>
+          <span
+            class="hero__type text-gradient"
+            [appTypewriter]="roles"
+            aria-live="polite"
+          ></span>
+          <span class="hero__caret" aria-hidden="true"></span>
+        </span>
+      </p>
+
+      <p class="hero__summary">{{ profile.summary }}</p>
+
+      <div class="hero__actions">
+        <app-resume-button />
+
+        <button
+          type="button"
+          class="btn btn--ghost"
+          (click)="scrollTo('contact')"
+        >
+          <app-icon class="btn__icon" name="send" [size]="18" />
+          Contact Me
+        </button>
+      </div>
+
+      <ul class="hero__socials">
+        @for (social of socials; track social.label) {
+          <li>
+            <a
+              class="hero__social"
+              [href]="social.url"
+              [attr.aria-label]="social.label"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <app-icon [name]="social.icon" [size]="20" />
+            </a>
+          </li>
+        }
+      </ul>
+
+    </div>
+
+    <div class="hero__portrait">
+      <div class="hero__portrait-ring" aria-hidden="true"></div>
+
+      <img
+        class="hero__photo"
+        [src]="profile.photo"
+        [alt]="profile.fullName + ', ' + profile.title"
+        width="360"
+        height="360"
+        loading="eager"
+        decoding="async"
+      />
+
+      <span class="hero__badge glass">
+        <span class="hero__badge-dot"></span>
+        Open to opportunities
+      </span>
+    </div>
+
+  </div>
+
+  <button
+    type="button"
+    class="hero__scroll"
+    aria-label="Scroll to about section"
+    (click)="scrollTo('about')"
+  >
+    <span class="hero__scroll-text">Scroll</span>
+    <span class="hero__scroll-mouse" aria-hidden="true"><span></span></span>
+  </button>
+</section>

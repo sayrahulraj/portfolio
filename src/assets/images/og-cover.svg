@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
+  <rect width="100%" height="100%" fill="#0f172a"></rect>
+  <text x="50%" y="45%" font-size="72" fill="white" text-anchor="middle">
+    Rahul Raj
+  </text>
+  <text x="50%" y="58%" font-size="36" fill="#94a3b8" text-anchor="middle">
+    Java Full Stack Developer
+  </text>
+</svg>

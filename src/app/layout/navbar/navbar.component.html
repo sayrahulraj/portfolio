@@ -1,0 +1,60 @@
+<header class="nav" [class.nav--scrolled]="scroll.scrolled()">
+  <nav class="nav__inner container" aria-label="Primary">
+    <a
+      class="nav__brand"
+      href="#home"
+      (click)="$event.preventDefault(); onNavClick('home')"
+      aria-label="Rahul Raj – home"
+    >
+      <app-logo variant="full" [size]="38" />
+    </a>
+
+    <ul class="nav__links" [class.nav__links--open]="menuOpen()">
+      @for (item of navItems; track item.id) {
+        <li>
+          <a
+            class="nav__link"
+            [class.nav__link--active]="scroll.activeSection() === item.id"
+            [href]="'#' + item.id"
+            [attr.aria-current]="scroll.activeSection() === item.id ? 'true' : null"
+            (click)="$event.preventDefault(); onNavClick(item.id)"
+          >
+            {{ item.label }}
+          </a>
+        </li>
+      }
+      <li class="nav__cta">
+        <a
+          class="btn btn--primary"
+          href="#contact"
+          (click)="$event.preventDefault(); onNavClick('contact')"
+        >
+          Let's Talk
+        </a>
+      </li>
+    </ul>
+
+    <div class="nav__actions">
+      <app-theme-toggle />
+      <button
+        type="button"
+        class="nav__burger"
+        [attr.aria-expanded]="menuOpen()"
+        aria-controls="mobile-menu"
+        aria-label="Toggle navigation menu"
+        (click)="toggleMenu()"
+      >
+        <app-icon [name]="menuOpen() ? 'close' : 'menu'" [size]="24" />
+      </button>
+    </div>
+  </nav>
+
+  @if (menuOpen()) {
+    <button
+      type="button"
+      class="nav__backdrop"
+      aria-label="Close menu"
+      (click)="toggleMenu()"
+    ></button>
+  }
+</header>

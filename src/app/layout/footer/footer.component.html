@@ -1,0 +1,57 @@
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <app-logo variant="full" [size]="42" />
+      <p class="footer__tagline">{{ profile.title }} crafting reliable, scalable software.</p>
+      <ul class="footer__socials">
+        @for (social of socials; track social.label) {
+          <li>
+            <a
+              class="footer__social"
+              [href]="social.url"
+              [attr.aria-label]="social.label"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <app-icon [name]="social.icon" [size]="20" />
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <nav class="footer__links" aria-label="Footer">
+      <h3 class="footer__heading">Quick Links</h3>
+      <ul>
+        @for (link of quickLinks; track link.id) {
+          <li>
+            <a
+              [href]="'#' + link.id"
+              (click)="$event.preventDefault(); onLink(link.id)"
+            >{{ link.label }}</a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <div class="footer__contact">
+      <h3 class="footer__heading">Get in touch</h3>
+      <a class="footer__contact-item" [href]="'mailto:' + profile.email">
+        <app-icon name="email" [size]="18" /> {{ profile.email }}
+      </a>
+      <a class="footer__contact-item" [href]="'tel:' + profile.phone">
+        <app-icon name="phone" [size]="18" /> {{ profile.phone }}
+      </a>
+      <span class="footer__contact-item">
+        <app-icon name="location" [size]="18" /> {{ profile.location }}
+      </span>
+    </div>
+  </div>
+
+  <div class="footer__bottom container">
+    <p>&copy; {{ year }} {{ profile.fullName }}. All rights reserved.</p>
+    <button type="button" class="footer__top" (click)="scroll.scrollToTop()">
+      Back to top <app-icon name="arrow-up" [size]="16" />
+    </button>
+  </div>
+</footer>
