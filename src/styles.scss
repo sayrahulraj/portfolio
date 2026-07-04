@@ -99,6 +99,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--nav-height);
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -183,7 +184,7 @@ ul {
 }
 
 .container {
-  width: min(100% - clamp(1rem, 5vw, 2.5rem), var(--container));
+  width: min(100% - 2rem, var(--container));
   margin-inline: auto;
 }
 
@@ -467,4 +468,10 @@ ul {
 ::selection {
   background: var(--brand-1);
   color: #fff;
+}
+
+@media (min-width: 481px) {
+  .container {
+    width: min(100% - 2.5rem, var(--container));
+  }
 }
