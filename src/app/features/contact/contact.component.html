@@ -31,27 +31,36 @@
 
           <span class="contact__item">
             <span class="contact__item-icon">
-              <app-icon name="location" [size]="18" />
+              <app-icon name="location" [size]="18"></app-icon>
             </span>
+
             <span>
               <span class="contact__item-label">Location</span>
-              {{ profile.location }}
+
+              <a [href]="cityUrl" target="_blank" rel="noopener noreferrer" class="contact__location-link">
+                {{ profile.location }}
+              </a>
             </span>
           </span>
           <ul class="contact__socials">
             @for (social of socials; track social.label) {
-              <li>
-                <a class="contact__social" [href]="social.url" [attr.aria-label] = "social.label" target="_blank" rel="noopener noreferrer">
-                  <app-icon [name]="social.icon" [size]="20" />
-                </a>
-              </li>
+            <li>
+              <a class="contact__social" [href]="social.url" [attr.aria-label]="social.label" target="_blank"
+                rel="noopener noreferrer">
+                <app-icon [name]="social.icon" [size]="20" />
+              </a>
+            </li>
             }
           </ul>
 
         </div>
 
         <div class="contact__map glass" role="region" aria-label="Map showing location">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15012.543674894578!2d78.47261518310965!3d17.41230123749484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1783192945116!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>        </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15012.543674894578!2d78.47261518310965!3d17.41230123749484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1783192945116!5m2!1sen!2sin"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
       </aside>
 
       <!-- Right: form -->
