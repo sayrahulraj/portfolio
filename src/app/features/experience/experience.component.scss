@@ -169,3 +169,23 @@
     padding: 1.25rem;
   }
 }
+
+@media (max-width: 480px) {
+  .exp__timeline {
+    padding-left: 2rem;
+  }
+
+  .exp__timeline::before {
+    left: 10px;
+  }
+
+  .exp__marker {
+    left: 2rem;
+    width: 28px;
+    height: 28px;
+  }
+
+  .exp__role {
+    font-size: 1.1rem;
+  }
+}

@@ -101,7 +101,14 @@
   border-color: var(--brand-2);
 }
 
-@media (max-width: 800px) {
+@media (min-width: 481px) and (max-width: 800px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
   .footer__grid {
     grid-template-columns: 1fr;
     gap: 2rem;

@@ -70,3 +70,9 @@
   padding: 0.6rem 1rem;
   font-size: 0.85rem;
 }
+
+@media (max-width: 480px) {
+  .certs__grid {
+    grid-template-columns: 1fr;
+  }
+}

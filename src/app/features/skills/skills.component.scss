@@ -90,3 +90,9 @@
     animation: none;
   }
 }
+
+@media (max-width: 480px) {
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+}
