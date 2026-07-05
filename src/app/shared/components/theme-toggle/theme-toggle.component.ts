@@ -79,5 +79,5 @@ import { IconComponent } from '../icon/icon.component';
 })
 export class ThemeToggleComponent {
   protected readonly theme = inject(ThemeService);
-  protected readonly isDark = computed(() => this.theme.theme() === 'dark');
+  protected readonly isDark = computed(() => this.theme.theme() === 'light');
 }
