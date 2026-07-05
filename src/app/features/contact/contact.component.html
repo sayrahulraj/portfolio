@@ -70,6 +70,13 @@
         </div>
         }
 
+        @if (sendError()) {
+          <div class="contact__send-error" role="alert">
+          <span class="contact__send-error-icon"><app-icon name="close" [size]="18" /></span>
+          <p>Failed to send. Please try again or email me directly.</p>
+        </div>
+        }
+
         <div class="contact__row">
           <div class="contact__field">
             <label for="name">Name</label>
@@ -111,8 +118,12 @@
           }
         </div>
 
-        <button type="submit" class="btn btn--primary contact__submit" appRipple>
-          <app-icon class="btn__icon" name="send" [size]="18" />Send Message
+        <button type="submit" class="btn btn--primary contact__submit" appRipple [disabled]="sending()">
+          @if (sending()) {
+            <span class="contact__spinner" aria-hidden="true"></span>Sending...
+          } @else {
+            <app-icon class="btn__icon" name="send" [size]="18" />Send Message
+          }
         </button>
       </form>
     </div>

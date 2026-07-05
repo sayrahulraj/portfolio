@@ -6,6 +6,7 @@ import { SectionHeadingComponent } from '../../shared/components/section-heading
 import { RippleDirective } from '../../shared/directives/ripple.directive';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { EmailService } from '../../core/services/email.service';
 
 @Component({
   selector: 'app-contact',
@@ -23,14 +24,15 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class ContactComponent {
   private readonly fb = inject(FormBuilder);
-
   private readonly sanitizer = inject(DomSanitizer);
-
+  private readonly emailService = inject(EmailService);
   protected readonly profile = PROFILE;
   protected readonly socials = SOCIALS;
 
   protected readonly submitted = signal(false);
   protected readonly success = signal(false);
+  protected readonly sending = signal(false);
+  protected readonly sendError = signal(false);
 
   protected readonly cityUrl = 'https://maps.google.com/?q=Hyderabad,India';
 
@@ -56,11 +58,17 @@ export class ContactComponent {
       return;
     }
 
-    // No backend wired — simulate a successful send and reset.
-    this.success.set(true);
-    this.form.reset();
-    this.submitted.set(false);
-
-    setTimeout(() => this.success.set(false), 5000);
+    this.sending.set(true);
+    this.sendError.set(false);
+    const { name, email, subject, message } = this.form.getRawValue();
+    this.emailService.send({ name, email, subject, message })
+      .then(() => {
+        this.success.set(true);
+        this.form.reset();
+        this.submitted.set(false);
+        setTimeout(() => this.success.set(false), 5000);
+      })
+      .catch(() => this.sendError.set(true))
+      .finally(() => this.sending.set(false));
   }
 }
