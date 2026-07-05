@@ -18,7 +18,7 @@ import { IconComponent } from '../icon/icon.component';
       class="theme-toggle"
       role="switch"
       [attr.aria-checked]="isDark()"
-      [attr.aria-label]="'Switch to ' + (isDark() ? 'dark' : 'light') + ' theme'"
+      [attr.aria-label]="'Switch to ' + (isDark() ? 'light' : 'dark') + ' theme'"
       (click)="theme.toggle()"
     >
       <span class="theme-toggle__track">
@@ -79,5 +79,5 @@ import { IconComponent } from '../icon/icon.component';
 })
 export class ThemeToggleComponent {
   protected readonly theme = inject(ThemeService);
-  protected readonly isDark = computed(() => this.theme.theme() === 'light');
+  protected readonly isDark = computed(() => this.theme.theme() === 'dark');
 }
