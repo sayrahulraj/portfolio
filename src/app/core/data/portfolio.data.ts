@@ -99,7 +99,7 @@ export const SKILL_CATEGORIES: readonly SkillCategory[] = [
         skills: [
             { name: 'OAuth2', level: 90 },
             { name: 'JWT Authentication', level: 90 },
-            { name: 'API Gateway', level: 80 },
+            { name: 'API Gateway', level: 85 },
             { name: 'Swagger/OpenAPI', level: 90 },
             { name: 'Confluence', level: 90 },
         ]
