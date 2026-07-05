@@ -1,55 +1,31 @@
 <section id="skills" class="section skills" aria-labelledby="skills-title">
   <div class="container">
-    <app-section-heading
-      eyebrow="Skills"
-      title="My technical"
-      accent="toolbox"
-      titleId="skills-title"
-      subtitle="Technologies and practices I use to design, build and ship reliable software."
-    />
+    <app-section-heading eyebrow="Skills" title="My technical" accent="toolbox" titleId="skills-title"
+      subtitle="Technologies and practices I use to design, build and ship reliable software." />
 
     <div class="skills__grid">
       @for (category of categories; track category.title; let i = $index) {
-        <article
-          class="skills__card gradient-border reveal"
-          appReveal
-          [revealDelay]="(i % 4) * 90"
-        >
-          <div class="skills__card-inner">
-            <header class="skills__card-head">
-              <span class="skills__icon">
-                <app-icon [name]="iconFor(category.icon)" [size]="22" />
-              </span>
+      <article class="skills__card gradient-border reveal" appReveal [revealDelay]="(i % 4) * 90">
+        <div class="skills__card-inner">
+          <header class="skills__card-head">
+            <span class="skills__icon">
+              <app-icon [name]="iconFor(category.icon)" [size]="20" />
+            </span>
+            <div class="skills__card-meta">
+              <h3 class="skills__card-title"> {{ category.title }} </h3>
+              <span class="skills_card-count"> {{ category.skills.length }} technologies</span>
+            </div>
+          </header>
 
-              <h3 class="skills__card-title">{{ category.title }}</h3>
-            </header>
-
-            <ul class="skills__list">
-              @for (skill of category.skills; track skill.name) {
-                <li class="skills__item">
-                  <div class="skills__item-head">
-                    <span>{{ skill.name }}</span>
-                    <span class="skills__pct">{{ skill.level }}%</span>
-                  </div>
-
-                  <div
-                    class="skills__meter"
-                    role="progressbar"
-                    [attr.aria-valuenow]="skill.level"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                    [attr.aria-label]="skill.name + ' proficiency'"
-                  >
-                    <span
-                      class="skills__meter-fill"
-                      [style.--level]="skill.level"
-                    ></span>
-                  </div>
-                </li>
-              }
-            </ul>
-          </div>
-        </article>
+          <ul class="skills__list" [attr.aria-label]="category.title + 'skills'">
+            @for (skill of category.skills; track skill.name) {
+            <li class="skills__chip" [class.skills__chip--accent]="skill.level >= 85">
+              {{skill.name}}
+            </li>
+            }
+          </ul>
+        </div>
+      </article>
       }
     </div>
   </div>

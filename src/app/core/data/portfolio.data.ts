@@ -265,10 +265,10 @@ export const PROJECTS: readonly Project[] = [
         image: 'assets/images/digi-elearning.png',
         stack: [
             'Java',
-            'Android Studio',
-            'SQLite',
+            'Android',
+            'Firebase',
             'XML',
-            'Firebase Authentication',
+            'Android Studio',
             'Material Design'
         ],
         github: 'https://github.com/sayrahulraj/DigiELearning',
