@@ -18,7 +18,7 @@ import { IconComponent } from '../icon/icon.component';
       class="theme-toggle"
       role="switch"
       [attr.aria-checked]="isDark()"
-      [attr.aria-label]="'Switch to ' + (isDark() ? 'light' : 'dark') + ' theme'"
+      [attr.aria-label]="'Switch to ' + (isDark() ? 'dark' : 'light') + ' theme'"
       (click)="theme.toggle()"
     >
       <span class="theme-toggle__track">
