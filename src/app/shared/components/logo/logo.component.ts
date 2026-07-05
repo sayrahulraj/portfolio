@@ -53,7 +53,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
       @if (variant === 'full') {
         <span class="logo__word">
-          Rahul<span class="logo__word-accent">Raj</span>
+          Rahul Raj
         </span>
       }
     </span>
@@ -80,11 +80,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
       font-weight: 800;
       font-size: 1.15rem;
       letter-spacing: -0.02em;
-      color: var(--text);
-    }
-
-    .logo__word-accent {
-      margin-left: 0.15rem;
       background: var(--gradient-neon);
       -webkit-background-clip: text;
       background-clip: text;
