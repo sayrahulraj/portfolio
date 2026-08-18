@@ -307,7 +307,7 @@ export const CERTIFICATIONS: readonly Certification[] = [
     {
          name: 'Claude Certified Architect - Foundations',
          organization: 'Anthropic',
-         date: '2019-09-01',
+         date: '2026-08-02',
          image: 'assets/images/claude-certified-architect-foundations.png',
          url: 'https://www.credly.com/badges/dbb51e06-8e8f-4925-838d-09792daaa6e4/public_url',
     },
