@@ -276,47 +276,47 @@ export const PROJECTS: readonly Project[] = [
 ];
 
 export const CERTIFICATIONS: readonly Certification[] = [
-    {
-        name: 'AWS Certified Cloud Practitioner',
-        organization: 'Amazon Web Services (AWS)',
-        date: '2024-11-06',
-        image: 'assets/images/aws_cloudpractioner.png',
-        url: 'https://cp.certmetrics.com/amazon/en/public/verify/credential/efb2457028bd47e99c3f96ce4a1c604a',
-    },
-    {
-        name: 'Android Certification Training Course with Java',
-        organization: 'Edureka',
-        date: '2022-01-24',
-        image: 'assets/images/android_developer.png',
-        url: 'https://www.edureka.co/lms/certificate/846c53aa4633dff0dbd27dd45388258e',
-    },
-    {
-        name: 'Programming in Java',
-        organization: 'NPTEL',
-        date: '2019-04-01',
-        image: 'assets/images/nptel-java.png',
-        url: 'https://drive.google.com/file/d/1K3KySNqhcguPiHpAehZbSMHBB4LFlFHQ/view',
-    },
-    {
-        name: 'Database Management System',
-        organization: 'NPTEL',
-        date: '2026-08-03',
-        image: 'assets/images/nptel-dbms.png',
-        url: 'https://drive.google.com/file/d/1rU0-5bosdjqBhSmgx2Ca2FzkQapj-VSW/view',
-    },
-    {
-         name: 'Claude Certified Architect - Foundations',
-         organization: 'Anthropic',
-         date: '2026-08-02',
-         image: 'assets/images/claude-certified-architect-foundations.png',
-         url: 'https://www.credly.com/badges/dbb51e06-8e8f-4925-838d-09792daaa6e4/public_url',
-    },
-    {
-         name: 'Claude Certified Architect - Professional',
-         organization: 'Anthropic',
-         date: '2026-08-03',
-         image: 'assets/images/claude-certified-architect-professional.png',
-         url: 'https://www.credly.com/badges/73a31231-7b0c-4f7c-8963-4e9a5261d9e5/public_url',
-    }
+  {
+    name: 'Claude Certified Architect - Foundations',
+    organization: 'Anthropic',
+    date: '2026-08-02',
+    image: 'assets/images/claude-certified-architect-foundations.png',
+    url: 'https://www.credly.com/badges/dbb51e06-8e8f-4925-838d-09792daaa6e4/public_url',
+  },
+  {
+    name: 'Claude Certified Architect - Professional',
+    organization: 'Anthropic',
+    date: '2026-08-03',
+    image: 'assets/images/claude-certified-architect-professional.png',
+    url: 'https://www.credly.com/badges/73a31231-7b0c-4f7c-8963-4e9a5261d9e5/public_url',
+  },
+  {
+    name: 'Programming in Java',
+    organization: 'NPTEL',
+    date: '2019-04-01',
+    image: 'assets/images/nptel-java.png',
+    url: 'https://drive.google.com/file/d/1K3KySNqhcguPiHpAehZbSMHBB4LFlFHQ/view',
+  },
+  {
+    name: 'Database Management System',
+    organization: 'NPTEL',
+    date: '2026-08-03',
+    image: 'assets/images/nptel-dbms.png',
+    url: 'https://drive.google.com/file/d/1rU0-5bosdjqBhSmgx2Ca2FzkQapj-VSW/view',
+  },
+  {
+     name: 'AWS Certified Cloud Practitioner',
+     organization: 'Amazon Web Services (AWS)',
+     date: '2024-11-06',
+     image: 'assets/images/aws_cloudpractioner.png',
+     url: 'https://cp.certmetrics.com/amazon/en/public/verify/credential/efb2457028bd47e99c3f96ce4a1c604a',
+  },
+  {
+    name: 'Android Certification Training Course with Java',
+    organization: 'Edureka',
+    date: '2022-01-24',
+    image: 'assets/images/android_developer.png',
+    url: 'https://www.edureka.co/lms/certificate/846c53aa4633dff0dbd27dd45388258e',
+  }
 ];
 
