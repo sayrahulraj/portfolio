@@ -7,8 +7,8 @@ export const PROFILE = {
     initials: 'RR',
     title: 'Software Engineer',
     location: 'Hyderabad, IN',
-    email: 'sayrahulraj@gmail.com',
-    phone: '+91 85410 77579',
+    email: 'rahulrajonline.ai@gmail.com',
+    phone: '+91 84648 77579',
     photo: 'assets/images/profile.jpg',
     resumePath: 'assets/resume/Rahul_Raj_Resume.pdf',
     resumeFileName: 'Rahul_Raj_Resume.pdf',
@@ -28,7 +28,7 @@ export const NAV_ITEMS: readonly NavItem[] = [
 export const SOCIALS: readonly SocialLink[] = [
     { label: 'GitHub', url: 'https://github.com/sayrahulraj', icon: 'github' },
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/sayrahulraj/', icon: 'linkedin' },
-    { label: 'Email', url: 'mailto:sayrahulraj@gmail.com', icon: 'email' },
+    { label: 'Email', url: 'mailto:rahulrajonline.ai@gmail.com', icon: 'email' },
 ];
 
 export const ABOUT_TIMELINE: readonly TimelineEntry[] = [
@@ -63,32 +63,33 @@ export const ABOUT_HIGHLIGHTS: readonly { label: string, value: string }[] = [
 
 export const SKILL_CATEGORIES: readonly SkillCategory[] = [
     {
-        title: 'Language',
+        title: 'Language & Framework',
         icon: 'code',
         skills: [
-            { name: 'Java 8/17', level: 95 },
-            { name: 'JavaScript', level: 85 },
-            { name: 'TypeScript', level: 65 },
-            { name: 'Kotlin', level: 60 },
-            { name: 'Python', level: 30 },
+            { name: 'Java 8', level: 90 },
+            { name: 'Java 17', level: 95 },
+            { name: 'Spring Boot', level: 95 },
+            { name: 'Spring MVC', level: 90 },
+            { name: 'JPA / Hibernate', level: 85 },
         ]
     },
     {
-        title: 'Backend Technologies',
+        title: 'Architecture & Integration',
         icon: 'server',
         skills: [
-            { name: 'Spring Boot', level: 95 },
-            { name: 'Spring MVC', level: 90 },
-            { name: 'Microservices', level: 90 },
+            { name: 'Microservices Architecture', level: 90 },
+            { name: 'Hexagonal Architecture', level: 90 },
             { name: 'RESTful APIs', level: 95 },
             { name: 'Apache Kafka', level: 85 },
         ]
     },
     {
-        title: 'Frontend Technologies',
+        title: 'Frontend Development',
         icon: 'layout',
         skills: [
             { name: 'Angular', level: 90 },
+            { name: 'TypeScript', level: 65 },
+            { name: 'JavaScript', level: 85 },
             { name: 'HTML5', level: 90 },
             { name: 'CSS3', level: 85 },
         ]
@@ -100,48 +101,55 @@ export const SKILL_CATEGORIES: readonly SkillCategory[] = [
             { name: 'OAuth2', level: 90 },
             { name: 'JWT Authentication', level: 90 },
             { name: 'API Gateway', level: 85 },
-            { name: 'Swagger/OpenAPI', level: 90 },
-            { name: 'Confluence', level: 90 },
+            { name: 'Swagger / OpenAPI', level: 90 },
         ]
     },
     {
-        title: 'Database, ORM & Caching',
+        title: 'Data & Caching',
         icon: 'database',
         skills: [
             { name: 'MS SQL Server', level: 90 },
-            { name: 'Redis', level: 90 },
             { name: 'AWS RDS', level: 80 },
-            { name: 'JPA/Hibernate', level: 85 },
+            { name: 'Redis', level: 90 },
         ]
     },
     {
-        title: 'Build & Testing Tools',
-        icon: 'tool',
-        skills: [
-            { name: 'Maven', level: 90 },
-            { name: 'Gradle', level: 90 },
-            { name: 'JUnit', level: 85 },
-            { name: 'Mockito', level: 85 },
-        ]
-    },
-    {
-        title: 'DevOps Tools & Methodologies',
+        title: 'DevOps & CI/CD',
         icon: 'git-branch',
         skills: [
-            { name: 'CI/CD Pipelines', level: 90 },
-            { name: 'SonarQube', level: 90 },
-            { name: 'Fortify Scan', level: 85 },
-            { name: 'Agile', level: 90 },
+            { name: 'GitLab Pipelines', level: 90 },
+            { name: 'Maven', level: 90 },
+            { name: 'Gradle', level: 90 },
         ]
     },
     {
-
-        title: 'AI Tools',
+        title: 'Testing & Quality',
+        icon: 'tool',
+        skills: [
+            { name: 'JUnit', level: 85 },
+            { name: 'Mockito', level: 85 },
+            { name: 'Cucumber', level: 85 },
+            { name: 'SonarQube', level: 90 },
+            { name: 'Fortify Scan', level: 85 },
+            { name: 'Code Reviews', level: 90 },
+        ]
+    },
+    {
+        title: 'Agile Collaboration',
+        icon: 'briefcase',
+        skills: [
+            { name: 'Scrum', level: 90 },
+            { name: 'Confluence', level: 90 },
+            { name: 'Cross-Functional & Client-Facing Delivery', level: 85 },
+        ]
+    },
+    {
+        title: 'AI-Augmented Engineering',
         icon: 'brain',
         skills: [
-            { name: 'Devin AI', level: 90 },
             { name: 'Claude AI', level: 90 },
-            { name: 'GitHub Co-Pilot', level: 85 },
+            { name: 'GitHub Copilot', level: 85 },
+            { name: 'Devin AI', level: 90 },
         ]
     }
 ];
