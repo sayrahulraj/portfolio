@@ -5,14 +5,14 @@ export const PROFILE = {
     lastName: 'Raj',
     fullName: 'Rahul Raj',
     initials: 'RR',
-    title: 'Software Engineer',
+    title: 'Java Full Stack Developer',
     location: 'Hyderabad, IN',
     email: 'rahulrajonline.ai@gmail.com',
     phone: '+91 84648 77579',
     photo: 'assets/images/profile.jpg',
     resumePath: 'assets/resume/Rahul_Raj_Resume.pdf',
     resumeFileName: 'Rahul_Raj_Resume.pdf',
-    summary: 'Java Full Stack Developer with 5+ years of experience building secure, scalable, and high-performance enterprise applications using Java, Spring Boot, Microservices, Angular, REST APIs, Kafka, and SQL. Passionate about clean architecture, modern DevOps practices, and AI-assisted software development to deliver innovative solutions for global clients.', roles: ['Android Apps', 'Web Applications'] as const,
+    summary: 'Java Full Stack Developer with 5.5+ years building scalable microservices and Angular front ends for global fintech, banking, and healthcare clients. Skilled in Spring Boot, Kafka, and cloud-native architectures, with a growing focus on AI-assisted engineering to boost delivery velocity.', roles: ['Android Apps', 'Web Applications'] as const,
 } as const;
 
 export const NAV_ITEMS: readonly NavItem[] = [
@@ -23,6 +23,15 @@ export const NAV_ITEMS: readonly NavItem[] = [
     { id: 'projects', label: 'Projects' },
     { id: 'certifications', label: 'Certifications' },
     { id: 'contact', label: 'Contact' },
+];
+
+/** Short tech highlights shown as pills under the hero's social links. */
+export const HERO_HIGHLIGHTS: readonly string[] = [
+    'Java',
+    'Spring Boot',
+    'Microservices',
+    'Angular',
+    'Claude AI',
 ];
 
 export const SOCIALS: readonly SocialLink[] = [
@@ -55,9 +64,9 @@ export const ABOUT_TIMELINE: readonly TimelineEntry[] = [
 ];
 
 export const ABOUT_HIGHLIGHTS: readonly { label: string, value: string }[] = [
-    { label: 'Years of Experience', value: '5+' },
+    { label: 'Years of Experience', value: '5.5+' },
     { label: 'Projects Delivered', value: '4+' },
-    { label: 'Certifications', value: '5+' },
+    { label: 'Certifications', value: '6+' },
     { label: 'Technologies', value: '3+' },
 ];
 

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { PROFILE, SOCIALS } from '../../core/data/portfolio.data';
+import { HERO_HIGHLIGHTS, PROFILE, SOCIALS } from '../../core/data/portfolio.data';
 import { ScrollService } from '../../core/services/scroll.service';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { TypewriterDirective } from '../../shared/directives/typrewriter.directive';
@@ -25,6 +25,7 @@ export class HeroComponent {
   protected readonly profile = PROFILE;
   protected readonly socials = SOCIALS;
   protected readonly roles = PROFILE.roles;
+  protected readonly highlights = HERO_HIGHLIGHTS;
 
   scrollTo(id: string): void {
     this.scroll.scrollTo(id);

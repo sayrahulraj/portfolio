@@ -14,7 +14,6 @@
       </h1>
 
       <p class="hero__role">
-        <span class="hero__role-label">{{ profile.title }}</span>
         <span class="hero__typed">
           <span class="hero__prefix">I build Scalable</span>
           <span
@@ -54,6 +53,12 @@
               <app-icon [name]="social.icon" [size]="20" />
             </a>
           </li>
+        }
+      </ul>
+
+      <ul class="hero__highlights">
+        @for (tag of highlights; track tag) {
+          <li class="hero__highlight-chip">{{ tag }}</li>
         }
       </ul>
 

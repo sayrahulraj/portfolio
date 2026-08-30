@@ -89,14 +89,12 @@
   margin-bottom: 1.25rem;
 }
 
-.hero__role-label {
-  color: var(--text);
-}
-
 .hero__typed {
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.4rem;
+  max-width: 100%;
   color: var(--text-muted);
   font-weight: 500;
   font-size: 0.95rem;
@@ -159,6 +157,30 @@
   color: var(--brand-2);
   border-color: var(--brand-2);
   box-shadow: var(--glow);
+}
+
+.hero__highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Same pill treatment as the skill chips in the Skills section, kept local
+   since component styles don't cross component boundaries. */
+.hero__highlight-chip {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1;
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  background: var(--surface);
+  letter-spacing: 0.02em;
 }
 
 /* ---------- Portrait ---------- */
@@ -300,7 +322,8 @@
 
   .hero__role,
   .hero__actions,
-  .hero__socials {
+  .hero__socials,
+  .hero__highlights {
     justify-content: center;
   }
 
