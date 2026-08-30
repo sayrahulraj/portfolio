@@ -44,22 +44,27 @@ export const ABOUT_TIMELINE: readonly TimelineEntry[] = [
     {
         year: '2021',
         title: 'Started at Tata Consultancy Services',
-        detail: 'Began my career as a Java Developer, building enterprise applications using Java, Spring Boot, and RESTful APIs for Cardinal Health.',
+        detail: 'Began my career as a Java Developer on Cardinal Health, building Spring Boot microservices and REST APIs from scratch as part of a cross-functional team, working closely with QA and business analysts on healthcare supply-chain applications.',
     },
     {
         year: '2024',
         title: 'Expanded Full Stack Expertise',
-        detail: 'Worked on State Farm project, developing scalable microservices and Angular applications while implementing secure APIs and event-driven solutions using Kafka.',
+        detail: 'Joined the State Farm insurance project mid-way through its development, ramping up quickly to improve existing APIs, interact directly with the client on new requirements, and deliver across both Spring Boot backend services and Angular frontend components.',
     },
     {
         year: '2025',
         title: 'Joined Infosys',
-        detail: 'Joined Infosys as an Senior Associate Consultant, contributing to enterprise banking solutions for Fiserv using Java 17, Spring Boot, Microservices, Angular, and CI/CD practices.',
+        detail: 'Joined Infosys as an Associate Consultant, working directly with the Fiserv client on a global banking platform — building and modernizing REST APIs behind an Apigee gateway using Java 17, Spring Boot, Microservices, and Angular.',
+    },
+    {
+        year: '2026',
+        title: 'Promoted to Senior Associate Consultant',
+        detail: 'Promoted to Senior Associate Consultant at Infosys within 1.5 years, continuing to lead API modernization work on the Fiserv account.',
     },
     {
         year: 'Present',
         title: 'Building Modern Enterprise Solutions',
-        detail: 'Developing secure, high-performance applications with Spring Boot, Angular, Kafka, Redis, OAuth2, JWT, and AI-assisted development tools like GitHub Copilot, Devin AI, and Claude AI.',
+        detail: 'Developing secure, high-performance applications with Spring Boot, Angular, Kafka, Redis, JWT, and AI-assisted development tools like GitHub Copilot, Devin AI, and Claude AI.',
     },
 ];
 
