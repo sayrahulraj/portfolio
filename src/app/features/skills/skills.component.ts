@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { SKILL_CATEGORIES } from '../../core/data/portfolio.data';
-import { IconName } from '../../shared/components/icon/icon.component';
-import { IconComponent } from '../../shared/components/icon/icon.component';
+import { IconComponent, IconName, isIconName } from '../../shared/components/icon/icon.component';
 import { SectionHeadingComponent } from '../../shared/components/section-heading/section-heading.component';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
 
@@ -16,7 +15,9 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
 export class SkillsComponent {
   protected readonly categories = SKILL_CATEGORIES;
 
+  // Category icons come from the data file as plain strings, so guard against
+  // a typo silently rendering a blank icon by falling back to something generic.
   iconFor(name: string): IconName {
-    return name as IconName;
+    return isIconName(name) ? name : 'code';
   }
 }

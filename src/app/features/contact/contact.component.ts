@@ -5,7 +5,6 @@ import { IconComponent } from '../../shared/components/icon/icon.component';
 import { SectionHeadingComponent } from '../../shared/components/section-heading/section-heading.component';
 import { RippleDirective } from '../../shared/directives/ripple.directive';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { EmailService } from '../../core/services/email.service';
 
 @Component({
@@ -24,7 +23,6 @@ import { EmailService } from '../../core/services/email.service';
 })
 export class ContactComponent {
   private readonly fb = inject(FormBuilder);
-  private readonly sanitizer = inject(DomSanitizer);
   private readonly emailService = inject(EmailService);
   protected readonly profile = PROFILE;
   protected readonly socials = SOCIALS;
@@ -35,8 +33,6 @@ export class ContactComponent {
   protected readonly sendError = signal(false);
 
   protected readonly cityUrl = 'https://maps.google.com/?q=Hyderabad,India';
-
-  protected readonly mapUrl: SafeResourceUrl = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.google.com/maps.app.goo.gl/gDBdbJXVeEaT5Jnm6');
 
   protected readonly form = this.fb.nonNullable.group({
     name: ['', [Validators.required, Validators.minLength(2)]],

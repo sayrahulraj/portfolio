@@ -41,6 +41,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.scroll.disconnect;
+    this.scroll.disconnect();
   }
 }

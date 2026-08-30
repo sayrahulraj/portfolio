@@ -17,7 +17,8 @@ export class FooterComponent {
   protected readonly profile = PROFILE;
   protected readonly socials = SOCIALS;
   protected readonly quickLinks = NAV_ITEMS;
-  protected readonly year = 2026;
+  // Keep the copyright year current without needing a yearly content update.
+  protected readonly year = new Date().getFullYear();
 
   onLink(id: string): void {
     this.scroll.scrollTo(id);

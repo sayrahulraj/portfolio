@@ -1,12 +1,11 @@
 import { AfterViewInit, Directive, ElementRef, inject, Input, NgZone, OnDestroy } from "@angular/core";
 
+/** Types out each word in `words`, pauses, deletes it, then moves to the next one — loops forever. */
 @Directive({
     selector: '[appTypewriter]',
     standalone: true,
 })
-
 export class TypewriterDirective implements AfterViewInit, OnDestroy{
-    // Directive logic goes here
     private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
     private readonly zone = inject(NgZone);
 

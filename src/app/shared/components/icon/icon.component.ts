@@ -32,8 +32,7 @@ export type IconName =
 | 'bot'
 | 'book'
 | 'tool'
-| 'git-branch'
-| 'server';
+| 'git-branch';
 
 @Component({
   selector: 'app-icon',
@@ -95,7 +94,7 @@ const ICONS: Record<IconName, string> = {
   location:'<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>',
   phone:'<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>',
   send: '<line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>',
-  check: '<polyline points="20 6 9 17 4 12"/>briefcase:<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>',
+  check: '<polyline points="20 6 9 17 4 12"/>',
   briefcase: '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>',
   award: '<circle cx="12" cy="8" r="7"/><path d="M15.5 12.5 17 22l-5-3-5 3 1.5-9.5"/>',
   lock: '<rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path>',
@@ -108,3 +107,8 @@ tool:
 'git-branch':
 '<line x1="6" y1="3" x2="6" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path><circle cx="6" cy="3" r="3"></circle>',
 };
+
+/** True when the given string is one of the icons we actually have artwork for. */
+export function isIconName(value: string): value is IconName {
+  return value in ICONS;
+}

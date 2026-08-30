@@ -1,3 +1,4 @@
+import { DOCUMENT } from '@angular/common';
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
@@ -68,6 +69,8 @@ export class TechGlobeComponent implements AfterViewInit, OnDestroy {
   @ViewChild('canvas', { static: true })
   private canvasRef!: ElementRef<HTMLCanvasElement>;
   private readonly zone = inject(NgZone);
+  private readonly document = inject(DOCUMENT);
+  private readonly window = this.document.defaultView;
   private ctx!: CanvasRenderingContext2D;
   private nodes: Node[] = [];
   private frameId = 0;
@@ -86,18 +89,18 @@ export class TechGlobeComponent implements AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     const canvas = this.canvasRef.nativeElement;
     const ctx = canvas.getContext('2d');
-    if (!ctx) {
+    if (!ctx || !this.window) {
       return;
     }
     this.ctx = ctx;
-    this.dpr = Math.min(window.devicePixelRatio || 1, 2);
-    this.reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.dpr = Math.min(this.window.devicePixelRatio || 1, 2);
+    this.reducedMotion = this.window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     this.nodes = this.buildNodes(TECH.length);
 
     this.zone.runOutsideAngular(() => {
       this.resize();
-      window.addEventListener('resize', this.resize, { passive: true });
-      window.addEventListener('pointermove', this.onPointerMove, { passive: true });
+      this.window!.addEventListener('resize', this.resize, { passive: true });
+      this.window!.addEventListener('pointermove', this.onPointerMove, { passive: true });
 
       this.observer = new IntersectionObserver(
         ([entry]) => {
@@ -115,11 +118,11 @@ export class TechGlobeComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    cancelAnimationFrame(this.frameId);
+    this.window?.cancelAnimationFrame(this.frameId);
     this.frameId = 0;
     this.observer?.disconnect();
-    window.removeEventListener('resize', this.resize);
-    window.removeEventListener('pointermove', this.onPointerMove);
+    this.window?.removeEventListener('resize', this.resize);
+    this.window?.removeEventListener('pointermove', this.onPointerMove);
   }
 
   /** Even distribution on a unit sphere (Fibonacci lattice). */
@@ -152,19 +155,22 @@ export class TechGlobeComponent implements AfterViewInit, OnDestroy {
   };
 
   private readonly onPointerMove = (event: PointerEvent): void => {
-    const nx = (event.clientX / window.innerWidth) * 2 - 1;
-    const ny = (event.clientY / window.innerHeight) * 2 - 1;
+    if (!this.window) {
+      return;
+    }
+    const nx = (event.clientX / this.window.innerWidth) * 2 - 1;
+    const ny = (event.clientY / this.window.innerHeight) * 2 - 1;
     this.targetTiltY = nx * 0.6;
     this.targetTiltX = -0.2 + ny * 0.4;
   };
 
   private loop = (): void => {
-    if (!this.visible) {
+    if (!this.visible || !this.window) {
       this.frameId = 0;
       return;
     }
     this.render();
-    this.frameId = requestAnimationFrame(this.loop);
+    this.frameId = this.window.requestAnimationFrame(this.loop);
   };
 
   private render(): void {
@@ -189,9 +195,9 @@ export class TechGlobeComponent implements AfterViewInit, OnDestroy {
 
     const projected = this.nodes.map((n) => {
       // rotate around Y then X
-      let x = n.x * cosY - n.z * sinY;
+      const x = n.x * cosY - n.z * sinY;
       let z = n.x * sinY + n.z * cosY;
-      let y = n.y * cosX - z * sinX;
+      const y = n.y * cosX - z * sinX;
       z = n.y * sinX + z * cosX;
 
       const perspective = 1 / (1.8 - z); // depth scaling

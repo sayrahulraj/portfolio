@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import emailjs from '@emailjs/browser';
-import { EMAILJS_CONFIG } from "../config/emailjs.config";
+import { environment } from '../../../environments/environment';
 
 export interface ContactPayload {
     name: string;
@@ -13,8 +13,8 @@ export interface ContactPayload {
 export class EmailService {
     send(payload: ContactPayload): Promise<void> {
         return emailjs.send(
-            EMAILJS_CONFIG.serviceId,
-            EMAILJS_CONFIG.templateId,
+            environment.emailjs.serviceId,
+            environment.emailjs.templateId,
             {
                 from_name: payload.name,
                 from_email: payload.email,
@@ -22,7 +22,7 @@ export class EmailService {
                 message: payload.message,
                 reply_to: payload.email
             },
-            { publicKey: EMAILJS_CONFIG.publicKey}
+            { publicKey: environment.emailjs.publicKey}
         )
         .then(()=>void 0);
     }
