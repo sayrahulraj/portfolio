@@ -280,14 +280,14 @@ export const CERTIFICATIONS: readonly Certification[] = [
     name: 'Claude Certified Architect - Foundations',
     organization: 'Anthropic',
     date: '2026-08-02',
-    image: 'assets/images/claude-certified-architect-foundations.png',
+    image: 'assets/images/claude-certified-architect-foundations.jpg',
     url: 'https://www.credly.com/badges/dbb51e06-8e8f-4925-838d-09792daaa6e4/public_url',
   },
   {
     name: 'Claude Certified Architect - Professional',
     organization: 'Anthropic',
     date: '2026-08-03',
-    image: 'assets/images/claude-certified-architect-professional.png',
+    image: 'assets/images/claude-certified-architect-professional.jpg',
     url: 'https://www.credly.com/badges/73a31231-7b0c-4f7c-8963-4e9a5261d9e5/public_url',
   },
   {
