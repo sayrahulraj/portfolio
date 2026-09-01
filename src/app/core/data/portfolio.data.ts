@@ -70,7 +70,7 @@ export const ABOUT_TIMELINE: readonly TimelineEntry[] = [
 
 export const ABOUT_HIGHLIGHTS: readonly { label: string, value: string }[] = [
     { label: 'Years of Experience', value: '5.5+' },
-    { label: 'Projects Delivered', value: '4+' },
+    { label: 'Projects Delivered', value: '3+' },
     { label: 'Certifications', value: '6+' },
     { label: 'Technologies', value: '3+' },
 ];
