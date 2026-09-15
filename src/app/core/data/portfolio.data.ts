@@ -137,12 +137,20 @@ export const SKILL_CATEGORIES: readonly SkillCategory[] = [
         ]
     },
     {
-        title: 'Collaboration & AI Tooling',
+        title: 'Agile Collaboration',
         icon: 'briefcase',
         skills: [
             { name: 'Scrum', level: 90 },
             { name: 'Confluence', level: 90 },
             { name: 'Cross-Functional & Client-Facing Delivery', level: 85 },
+        ]
+    },
+    {
+        title: 'AI-Augmented Engineering',
+        icon: 'sparkles',
+        highlight: true,
+        badge: 'Emerging',
+        skills: [
             { name: 'Claude AI', level: 90 },
             { name: 'GitHub Copilot', level: 85 },
             { name: 'Devin AI', level: 90 },
