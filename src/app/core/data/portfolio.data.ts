@@ -82,8 +82,9 @@ export const SKILL_CATEGORIES: readonly SkillCategory[] = [
         skills: [
             { name: 'Java 8', level: 90 },
             { name: 'Java 17', level: 95 },
+            { name: 'Java 21', level: 95 },
             { name: 'Spring Boot', level: 95 },
-            { name: 'Spring MVC', level: 90 },
+            { name: 'Quarkus', level: 95 },
             { name: 'JPA / Hibernate', level: 85 },
         ]
     },
@@ -95,6 +96,9 @@ export const SKILL_CATEGORIES: readonly SkillCategory[] = [
             { name: 'Hexagonal Architecture', level: 90 },
             { name: 'RESTful APIs', level: 95 },
             { name: 'Apache Kafka', level: 85 },
+            { name: 'JWT Authentication', level: 90 },
+            { name: 'API Gateway', level: 85 },
+            { name: 'Swagger / OpenAPI', level: 90 },
         ]
     },
     {
@@ -103,19 +107,8 @@ export const SKILL_CATEGORIES: readonly SkillCategory[] = [
         skills: [
             { name: 'Angular', level: 90 },
             { name: 'TypeScript', level: 65 },
-            { name: 'JavaScript', level: 85 },
             { name: 'HTML5', level: 90 },
             { name: 'CSS3', level: 85 },
-        ]
-    },
-    {
-        title: 'API Security & Documentation',
-        icon: 'lock',
-        skills: [
-            { name: 'OAuth2', level: 90 },
-            { name: 'JWT Authentication', level: 90 },
-            { name: 'API Gateway', level: 85 },
-            { name: 'Swagger / OpenAPI', level: 90 },
         ]
     },
     {
@@ -123,23 +116,18 @@ export const SKILL_CATEGORIES: readonly SkillCategory[] = [
         icon: 'database',
         skills: [
             { name: 'MS SQL Server', level: 90 },
+            { name: 'PostgreSQL', level: 90 },
             { name: 'AWS RDS', level: 80 },
             { name: 'Redis', level: 90 },
         ]
     },
     {
-        title: 'DevOps & CI/CD',
-        icon: 'git-branch',
+        title: 'DevOps, Testing & Quality',
+        icon: 'tool',
         skills: [
             { name: 'GitLab Pipelines', level: 90 },
             { name: 'Maven', level: 90 },
             { name: 'Gradle', level: 90 },
-        ]
-    },
-    {
-        title: 'Testing & Quality',
-        icon: 'tool',
-        skills: [
             { name: 'JUnit', level: 85 },
             { name: 'Mockito', level: 85 },
             { name: 'Cucumber', level: 85 },
@@ -149,18 +137,12 @@ export const SKILL_CATEGORIES: readonly SkillCategory[] = [
         ]
     },
     {
-        title: 'Agile Collaboration',
+        title: 'Collaboration & AI Tooling',
         icon: 'briefcase',
         skills: [
             { name: 'Scrum', level: 90 },
             { name: 'Confluence', level: 90 },
             { name: 'Cross-Functional & Client-Facing Delivery', level: 85 },
-        ]
-    },
-    {
-        title: 'AI-Augmented Engineering',
-        icon: 'brain',
-        skills: [
             { name: 'Claude AI', level: 90 },
             { name: 'GitHub Copilot', level: 85 },
             { name: 'Devin AI', level: 90 },

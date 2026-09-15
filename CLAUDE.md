@@ -13,11 +13,13 @@ npm start           # ng serve — dev server at http://localhost:4200/, auto-re
 npm run build       # ng build — production build to dist/portfolio (default config is production)
 npm run watch       # ng build --watch --configuration development
 npm test            # ng test — Karma/Jasmine unit tests, launches Chrome
+npm run test:ci     # ng test --watch=false --browsers=ChromeHeadless — headless, single run
+npm run lint        # ng lint — ESLint via angular-eslint (eslint.config.js), covers .ts and inline templates
 ```
 
 - Run a single spec file: `ng test --include='**/theme.service.spec.ts'`
 - Generate a component consistent with the existing style: `ng generate component features/<name>` (schematics default to SCSS styles; components in this repo are otherwise standalone and hand-written, not scaffolded with the CLI's default template/spec boilerplate — check a sibling component before generating).
-- There is no e2e test setup and no linter configured in this repo.
+- There is no e2e test setup in this repo.
 
 ## Architecture
 
@@ -26,7 +28,7 @@ Everything lives under `src/app/`, split into four layers:
 - **`core/`** — app-wide singletons, no UI.
   - `data/portfolio.data.ts` is the single source of truth for all page content (profile info, nav items, socials, skills, experience, projects, certifications, about timeline). Editing site content almost always means editing this file, not the components that render it.
   - `models/portfolio.models.ts` defines the readonly interfaces that shape that data.
-  - `services/` — one `providedIn: 'root'` service per browser concern: `ThemeService` (dark/light mode via a signal, persisted to `localStorage`, reflected onto `<html data-theme>`), `ScrollService` (smooth-scroll + `IntersectionObserver`-based scroll-spy driving navbar active state, using `NgZone.runOutsideAngular` for the observer callback), `SeoService` (Title/Meta tag updates per route), `ResumeService` (fetches and force-downloads the resume PDF, with an `unavailable` state if the file is missing), `EmailService` (wraps `@emailjs/browser` using config from `core/config/emailjs.config.ts`).
+  - `services/` — one `providedIn: 'root'` service per browser concern: `ThemeService` (dark/light mode via a signal, persisted to `localStorage`, reflected onto `<html data-theme>`), `ScrollService` (smooth-scroll + `IntersectionObserver`-based scroll-spy driving navbar active state, using `NgZone.runOutsideAngular` for the observer callback), `SeoService` (Title/Meta tag updates per route), `ResumeService` (fetches and force-downloads the resume PDF, with an `unavailable` state if the file is missing), `EmailService` (wraps `@emailjs/browser` using service/template/public keys from `src/environments/environment(.development).ts`).
 - **`features/`** — one folder per landing-page section (`hero`, `about`, `skills`, `experience`, `projects`, `certifications`, `contact`, `tech-globe`). `home/home.component.ts` composes all of them in order and is the sole routed component (see below). Each feature component pulls its content from `portfolio.data.ts` and stays otherwise self-contained (own `.html`/`.scss`, `ChangeDetectionStrategy.OnPush`).
 - **`layout/`** — `navbar` and `footer`, rendered once in `app.component.ts` around the `<router-outlet>`.
 - **`shared/`** — reusable, presentation-only pieces used across features: `components/icon` (a single `IconComponent` with an inlined SVG-path registry — add new icons to the `ICONS` map and the `IconName` union in `icon.component.ts`, not as separate components), `components/logo`, `components/resume-button`, `components/section-heading`, `components/theme-toggle`, and `directives/` (`reveal` — scroll-triggered fade/slide-in via `IntersectionObserver`, `ripple` — click ripple effect, `typrewriter` — typing animation for the hero).
