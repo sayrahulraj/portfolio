@@ -93,9 +93,9 @@ export const SKILL_CATEGORIES: readonly SkillCategory[] = [
         icon: 'server',
         skills: [
             { name: 'Microservices Architecture', level: 90 },
+            { name: 'Apache Kafka', level: 85 },
             { name: 'Hexagonal Architecture', level: 90 },
             { name: 'RESTful APIs', level: 95 },
-            { name: 'Apache Kafka', level: 85 },
             { name: 'JWT Authentication', level: 90 },
             { name: 'API Gateway', level: 85 },
             { name: 'Swagger / OpenAPI', level: 90 },
