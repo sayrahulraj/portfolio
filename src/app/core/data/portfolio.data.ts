@@ -267,6 +267,22 @@ export const EXPERIENCES: readonly ExperienceItem[] = [
 
 export const PROJECTS: readonly Project[] = [
     {
+        name: 'Personal Portfolio Website',
+        description:
+            'This site — a data-driven, single-page portfolio built with Angular 19 standalone components and signal-based state. Features a dark/light theme, scroll-spy navigation, an interactive tech-globe, an EmailJS-powered contact form, and a CI-friendly component structure, developed with heavy use of AI-assisted tooling (Claude AI, GitHub Copilot, Devin AI) to move faster without cutting corners on code quality.',
+        image: 'assets/images/portfolio-site.png',
+        stack: [
+            'Angular 19',
+            'TypeScript',
+            'SCSS',
+            'RxJS',
+            'EmailJS',
+            'Claude AI',
+        ],
+        github: 'https://github.com/sayrahulraj/portfolio',
+        demo: 'https://rahulrajonline.in',
+    },
+    {
         name: 'Digi E-Learning Android Application',
         description:
             'A feature-rich Android learning platform designed for students to access study materials, take subject-wise quizzes, and utilize productivity tools. The application includes user authentication, semester-wise notes, PDF viewer, quiz management, score tracking, calculators, timer, logarithm tables, and trigonometric formulas to enhance the learning experience.',
