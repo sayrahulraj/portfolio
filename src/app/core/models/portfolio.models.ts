@@ -15,6 +15,10 @@ export interface SkillCategory {
   readonly title: string;
   readonly icon: string;
   readonly skills: readonly Skill[];
+  /** marks a category for spotlighted, visually distinct treatment (e.g. AI tooling) */
+  readonly featured?: boolean;
+  /** short badge shown on a featured category's card */
+  readonly badge?: string;
 }
 
 export interface Skill {

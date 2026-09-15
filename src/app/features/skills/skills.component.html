@@ -5,21 +5,30 @@
 
     <div class="skills__grid">
       @for (category of categories; track category.title; let i = $index) {
-      <article class="skills__card gradient-border reveal" appReveal [revealDelay]="(i % 4) * 90">
+      <article class="skills__card gradient-border reveal"
+        [class.skills__card--featured]="category.featured"
+        appReveal [revealDelay]="(i % 4) * 90">
         <div class="skills__card-inner">
           <header class="skills__card-head">
-            <span class="skills__icon">
+            <span class="skills__icon" [class.skills__icon--featured]="category.featured">
               <app-icon [name]="iconFor(category.icon)" [size]="20" />
             </span>
             <div class="skills__card-meta">
               <h3 class="skills__card-title"> {{ category.title }} </h3>
               <span class="skills_card-count"> {{ category.skills.length }} technologies</span>
             </div>
+            @if (category.featured) {
+            <span class="skills__badge">
+              <app-icon name="sparkles" [size]="12" />
+              {{ category.badge }}
+            </span>
+            }
           </header>
 
           <ul class="skills__list" [attr.aria-label]="category.title + 'skills'">
             @for (skill of category.skills; track skill.name) {
-            <li class="skills__chip" [class.skills__chip--accent]="skill.level >= 85">
+            <li class="skills__chip" [class.skills__chip--accent]="skill.level >= 85"
+              [class.skills__chip--ai]="category.featured">
               {{skill.name}}
             </li>
             }

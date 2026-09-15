@@ -95,8 +95,8 @@ export const SKILL_CATEGORIES: readonly SkillCategory[] = [
             { name: 'Microservices Architecture', level: 90 },
             { name: 'Apache Kafka', level: 85 },
             { name: 'Hexagonal Architecture', level: 90 },
-            { name: 'RESTful APIs', level: 95 },
             { name: 'JWT Authentication', level: 90 },
+            { name: 'RESTful APIs', level: 95 },
             { name: 'API Gateway', level: 85 },
             { name: 'Swagger / OpenAPI', level: 90 },
         ]
@@ -106,7 +106,7 @@ export const SKILL_CATEGORIES: readonly SkillCategory[] = [
         icon: 'layout',
         skills: [
             { name: 'Angular', level: 90 },
-            { name: 'TypeScript', level: 80 },
+            { name: 'TypeScript', level: 81 },
             { name: 'HTML5', level: 90 },
             { name: 'CSS3', level: 85 },
         ]
@@ -137,12 +137,20 @@ export const SKILL_CATEGORIES: readonly SkillCategory[] = [
         ]
     },
     {
-        title: 'Collaboration & AI Tooling',
+        title: 'Collaboration & Delivery',
         icon: 'briefcase',
         skills: [
             { name: 'Scrum', level: 90 },
             { name: 'Confluence', level: 90 },
             { name: 'Cross-Functional & Client-Facing Delivery', level: 85 },
+        ]
+    },
+    {
+        title: 'AI-Augmented Engineering',
+        icon: 'bot',
+        featured: true,
+        badge: 'Builds with AI, daily',
+        skills: [
             { name: 'Claude AI', level: 90 },
             { name: 'GitHub Copilot', level: 85 },
             { name: 'Devin AI', level: 90 },
