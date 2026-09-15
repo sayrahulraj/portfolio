@@ -106,7 +106,7 @@ export const SKILL_CATEGORIES: readonly SkillCategory[] = [
         icon: 'layout',
         skills: [
             { name: 'Angular', level: 90 },
-            { name: 'TypeScript', level: 65 },
+            { name: 'TypeScript', level: 80 },
             { name: 'HTML5', level: 90 },
             { name: 'CSS3', level: 85 },
         ]
@@ -125,7 +125,7 @@ export const SKILL_CATEGORIES: readonly SkillCategory[] = [
         title: 'DevOps, Testing & Quality',
         icon: 'tool',
         skills: [
-            { name: 'GitLab Pipelines', level: 90 },
+            { name: 'CI/CD', level: 90 },
             { name: 'Maven', level: 90 },
             { name: 'Gradle', level: 90 },
             { name: 'JUnit', level: 85 },
