@@ -29,8 +29,9 @@ export const NAV_ITEMS: readonly NavItem[] = [
 export const HERO_HIGHLIGHTS: readonly string[] = [
     'Java',
     'Spring Boot',
+    'Quarkus',
     'Microservices',
-    'Angular',
+    'Kafka',
     'Claude AI',
 ];
 
