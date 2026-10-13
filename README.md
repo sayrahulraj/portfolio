@@ -9,7 +9,7 @@
 [![Portfolio](https://img.shields.io/badge/Portfolio-rahulrajonline.in-6366F1?style=for-the-badge&logo=googlechrome&logoColor=white)](https://rahulrajonline.in)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-sayrahulraj-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sayrahulraj/)
 [![GitHub](https://img.shields.io/badge/GitHub-sayrahulraj-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sayrahulraj)
-[![Email](https://img.shields.io/badge/Email-rahulrajonline.ai-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rahulrajonline.ai@gmail.com)
+[![Email](https://img.shields.io/badge/Email-rahulrajonline.ai-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rajdeveloper017@gmail.com)
 [![Resume](https://img.shields.io/badge/Resume-Download-22C55E?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](src/assets/resume/Rahul_Raj_Resume.pdf)
 
 </div>

@@ -7,8 +7,8 @@ export const PROFILE = {
     initials: 'RR',
     title: 'Java Full Stack Developer',
     location: 'Hyderabad, IN',
-    email: 'rahulrajonline.ai@gmail.com',
-    phone: '+91 84648 77579',
+    email: 'rajdeveloper017@gmail.com',
+    phone: '+91 85410 77579',
     photo: 'assets/images/profile.jpg',
     resumePath: 'assets/resume/Rahul_Raj_Resume.pdf',
     resumeFileName: 'Rahul_Raj_Resume.pdf',
@@ -37,7 +37,7 @@ export const HERO_HIGHLIGHTS: readonly string[] = [
 export const SOCIALS: readonly SocialLink[] = [
     { label: 'GitHub', url: 'https://github.com/sayrahulraj', icon: 'github' },
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/sayrahulraj/', icon: 'linkedin' },
-    { label: 'Email', url: 'mailto:rahulrajonline.ai@gmail.com', icon: 'email' },
+    { label: 'Email', url: 'mailto:rajdeveloper017@gmail.com', icon: 'email' },
 ];
 
 export const ABOUT_TIMELINE: readonly TimelineEntry[] = [
