@@ -12,7 +12,7 @@ export const PROFILE = {
     photo: 'assets/images/profile.jpg',
     resumePath: 'assets/resume/Rahul_Raj_Resume.pdf',
     resumeFileName: 'Rahul_Raj_Resume.pdf',
-    summary: 'Java Full Stack Developer with 5.8+ years building scalable microservices and Angular front ends for global fintech, banking, and healthcare clients. Skilled in Spring Boot, Kafka, and cloud-native architectures, with a growing focus on AI-assisted engineering to boost delivery velocity.', roles: ['Android Apps', 'Web Applications'] as const,
+    summary: 'Java Full Stack Developer with 5 years 10 months building scalable microservices and Angular front ends for global fintech, banking, and healthcare clients. Skilled in Spring Boot, Kafka, and cloud-native architectures, with a growing focus on AI-assisted engineering to boost delivery velocity.', roles: ['Android Apps', 'Web Applications'] as const,
 } as const;
 
 export const NAV_ITEMS: readonly NavItem[] = [

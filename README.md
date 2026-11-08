@@ -20,7 +20,7 @@ This repository holds the source for my personal portfolio: a single-page site w
 
 ## About Me
 
-Java Full Stack Developer with 5.8+ years building scalable microservices and Angular front ends for global fintech, banking, and healthcare clients. Skilled in Spring Boot, Kafka, and cloud-native architectures, with a growing focus on AI-assisted engineering to boost delivery velocity.
+Java Full Stack Developer with 5 years 10 months building scalable microservices and Angular front ends for global fintech, banking, and healthcare clients. Skilled in Spring Boot, Kafka, and cloud-native architectures, with a growing focus on AI-assisted engineering to boost delivery velocity.
 
 <div align="center">
 
