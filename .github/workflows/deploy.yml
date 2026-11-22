@@ -1,4 +1,6 @@
+
 name: Build Angular Portfolio
+
 on:
   push:
     branches:
@@ -32,18 +34,28 @@ jobs:
           token: ${{ secrets.PORTFOLIO_DATA_TOKEN }}
           path: portfolio-data
 
-      # Step 3: # 3. Copy JSON files
+      # Step 3: Copy JSON files
       - name: Copy Portfolio Data
         run: |
-          mkdir -p portfolio/src/assets/data
+          mkdir -p portfolio/src/app/core/data
           cp -R portfolio-data/rahul-raj/data/. portfolio/src/app/core/data/
 
-      # 4. Copy images and other assets
+      # Step 4: Copy images and other assets
       - name: Copy Portfolio Assets
         run: |
+          mkdir -p portfolio/src/assets/images
           cp -R portfolio-data/rahul-raj/assets/. portfolio/src/assets/images/
 
-      # Step 4: Setup Node.js
+      # Step 5: Verify copied files
+      - name: Verify Portfolio Data
+        run: |
+          echo "JSON files:"
+          ls -la portfolio/src/app/core/data/
+
+          echo "Images and assets:"
+          ls -la portfolio/src/assets/images/
+
+      # Step 6: Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -51,12 +63,12 @@ jobs:
           cache: npm
           cache-dependency-path: portfolio/package-lock.json
 
-      # Step 5: Install dependencies
+      # Step 7: Install dependencies
       - name: Install Dependencies
         working-directory: portfolio
         run: npm ci
 
-      # Step 6: Build Angular application
+      # Step 8: Build Angular application
       - name: Build Angular Application
         working-directory: portfolio
         run: npm run build
