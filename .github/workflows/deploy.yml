@@ -32,11 +32,16 @@ jobs:
           token: ${{ secrets.PORTFOLIO_DATA_TOKEN }}
           path: portfolio-data
 
-      # Step 3: Copy private JSON data into Angular assets
+      # Step 3: # 3. Copy JSON files
       - name: Copy Portfolio Data
         run: |
           mkdir -p portfolio/src/assets/data
-          cp -R portfolio-data/rahul-raj/data/. portfolio/src/assets/data/
+          cp -R portfolio-data/rahul-raj/data/. portfolio/src/app/core/data/
+
+      # 4. Copy images and other assets
+      - name: Copy Portfolio Assets
+        run: |
+          cp -R portfolio-data/rahul-raj/assets/. portfolio/src/assets/images/
 
       # Step 4: Setup Node.js
       - name: Setup Node.js
