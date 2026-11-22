@@ -36,7 +36,7 @@ jobs:
       - name: Copy Portfolio Data
         run: |
           mkdir -p portfolio/src/assets/data
-          cp -R portfolio-data/data/. portfolio/src/assets/data/
+          cp -R portfolio-data/rahul-raj/data/. portfolio/src/assets/data/
 
       # Step 4: Setup Node.js
       - name: Setup Node.js
