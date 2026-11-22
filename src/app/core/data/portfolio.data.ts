@@ -1,19 +1,45 @@
 import { Certification, ExperienceItem, NavItem, Project, SkillCategory, SocialLink, TimelineEntry } from "../models/portfolio.models";
 
-export const PROFILE = {
+export const PROFILE = (() => {
+  const title = 'Java Full Stack Developer';
+  const experience = calculateExperience();
+  const roles = ['Android Apps', 'Web Applications'] as const;
+
+  return {
     firstName: 'Rahul',
     lastName: 'Raj',
     fullName: 'Rahul Raj',
     initials: 'RR',
-    title: 'Java Full Stack Developer',
+    title,
+    experience,
     location: 'Hyderabad, IN',
     email: 'rahulrajonline.ai@gmail.com',
     phone: '+91 84648 77579',
     photo: 'assets/images/profile.jpg',
     resumePath: 'assets/resume/Rahul_Raj_Resume.pdf',
     resumeFileName: 'Rahul_Raj_Resume.pdf',
-    summary: 'Java Full Stack Developer with 5 years 10 months building scalable microservices and Angular front ends for global fintech, banking, and healthcare clients. Skilled in Spring Boot, Kafka, and cloud-native architectures, with a growing focus on AI-assisted engineering to boost delivery velocity.', roles: ['Android Apps', 'Web Applications'] as const,
-} as const;
+    roles,
+    summary: `<strong>${title}</strong> with <strong>${experience}</strong> of experience building scalable microservices and Angular front ends for global fintech, banking, and healthcare clients. Skilled in Spring Boot, Kafka, and cloud-native architectures, with a growing focus on AI-assisted engineering to boost delivery velocity. Experienced in developing ${roles.join(' and ')}.`
+  } as const;
+})();
+
+function calculateExperience(): string {
+  const joiningDate = new Date(2021, 1, 18);
+  const today = new Date();
+
+  let totalMonths =
+    (today.getFullYear() - joiningDate.getFullYear()) * 12 +
+    (today.getMonth() - joiningDate.getMonth());
+
+  if (today.getDate() > joiningDate.getDate()) {
+    totalMonths++;
+  }
+
+  const years = Math.floor(totalMonths / 12);
+  const months = totalMonths % 12;
+
+  return `${years} years ${months} months`;
+}
 
 export const NAV_ITEMS: readonly NavItem[] = [
     { id: 'home', label: 'Home' },

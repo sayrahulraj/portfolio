@@ -25,17 +25,17 @@
         </span>
       </p>
 
-      <p class="hero__summary">{{ profile.summary }}</p>
+      <p class="hero__summary" [innerHTML]="profile.summary"></p>
 
       <div class="hero__actions">
-        <app-resume-button />
+        <app-resume-button></app-resume-button>
 
         <button
           type="button"
           class="btn btn--ghost"
           (click)="scrollTo('contact')"
         >
-          <app-icon class="btn__icon" name="send" [size]="18" />
+          <app-icon class="btn__icon" name="send" [size]="18"></app-icon>
           Contact Me
         </button>
       </div>

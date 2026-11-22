@@ -1,26 +1,36 @@
 <section id="about" class="section" aria-labelledby="about-title">
   <div class="container">
     <app-section-heading eyebrow="About Me" title="Passion for" accent="software engineering" titleId="about-title"
-      subtitle="A quick look at who I am and the journey that shaped my craft." />
+      subtitle="A quick look at who I am and the journey that shaped my craft."></app-section-heading>
 
     <div class="about__grid">
       <div class="about__intro reveal" appReveal>
         <p>
-          I'm <strong>{{ profile.fullName }}</strong>, a passionate
-          <strong>Java Full Stack Developer</strong> with 5+ years of experience
-          designing and developing scalable enterprise applications. I specialize in
-          Java, Spring Boot, Microservices, Angular, and RESTful APIs, building secure,
-          high-performance solutions that solve real-world business challenges.
+          I'm <strong>{{ profile.fullName }}</strong>, a <strong>{{ profile.title }}</strong>
+          with <strong>{{ profile.experience }}</strong> of experience, primarily focused on designing
+          and developing enterprise applications.
         </p>
 
         <p>
-          Throughout my journey at Tata Consultancy Services and Infosys, I've worked
-          on healthcare, insurance, and financial domain applications for global
-          clients including Cardinal Health, State Farm, and Fiserv. I enjoy writing
-          clean, maintainable code, collaborating with cross-functional teams, and
-          continuously learning new technologies. I'm also passionate about leveraging
-          AI-powered development tools to deliver innovative software faster and with
-          higher quality.
+          Throughout my experience at <strong>TCS</strong> and <strong>Infosys</strong>, I've worked
+          on legacy application modernization as well as new application development
+          for global clients including Cardinal Health, State Farm, and Fiserv. I enjoy writing clean,
+          maintainable code, collaborating with cross-functional teams, and delivering
+          reliable software solutions.
+        </p>
+
+        <p>
+          I also have hands-on experience using <strong>AI tools like Claude
+          and GitHub Copilot</strong> to enhance productivity, streamline development, and improve
+          code quality. I've completed <strong>three Claude certifications: Developer Foundation,
+          Architect Foundations, and Architect Professional</strong>.
+        </p>
+
+        <p>
+          Working across different projects and technologies has helped me become a quick
+          learner who can adapt to new technologies and changing requirements with ease.
+          I'm passionate about continuous learning and leveraging emerging technologies
+          to build innovative, high-quality software solutions.
         </p>
 
         <ul class="about__stats">
