@@ -1,0 +1,57 @@
+name: Build Angular Portfolio
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+  repository_dispatch:
+    types:
+      - portfolio-data-updated
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout public portfolio repository
+      - name: Checkout Portfolio
+        uses: actions/checkout@v7
+        with:
+          path: portfolio
+
+      # Step 2: Checkout private portfolio-data repository
+      - name: Checkout Private Portfolio Data
+        uses: actions/checkout@v7
+        with:
+          repository: sayrahulraj/portfolio-data
+          token: ${{ secrets.PORTFOLIO_DATA_TOKEN }}
+          path: portfolio-data
+
+      # Step 3: Copy private JSON data into Angular assets
+      - name: Copy Portfolio Data
+        run: |
+          mkdir -p portfolio/src/assets/data
+          cp -R portfolio-data/data/. portfolio/src/assets/data/
+
+      # Step 4: Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: portfolio/package-lock.json
+
+      # Step 5: Install dependencies
+      - name: Install Dependencies
+        working-directory: portfolio
+        run: npm ci
+
+      # Step 6: Build Angular application
+      - name: Build Angular Application
+        working-directory: portfolio
+        run: npm run build
