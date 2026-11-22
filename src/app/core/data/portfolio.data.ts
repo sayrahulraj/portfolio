@@ -55,9 +55,9 @@ export const NAV_ITEMS: readonly NavItem[] = [
 export const HERO_HIGHLIGHTS: readonly string[] = [
     'Java',
     'Spring Boot',
-    'Quarkus',
     'Microservices',
     'Kafka',
+    'Angular',
     'Claude AI',
 ];
 
@@ -96,7 +96,13 @@ export const ABOUT_TIMELINE: readonly TimelineEntry[] = [
 ];
 
 export const ABOUT_HIGHLIGHTS: readonly { label: string, value: string }[] = [
-    { label: 'Years of Experience', value: '5.8+' },
+    {
+        label: 'Years of Experience',
+        value: `${(() => {
+            const [years, months] = PROFILE.experience.match(/\d+/g)!.map(Number);
+            return (years + months / 12).toFixed(1);
+        })()}+`
+    },
     { label: 'Projects Delivered', value: '3+' },
     { label: 'Certifications', value: '6+' },
     { label: 'Technologies', value: '3+' },
